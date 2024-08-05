@@ -1,10 +1,9 @@
 .profile-image {
   position: relative;
   color: #fff;
-  border: 1px solid red;
 }
 
-.profile-image::after {
+.profile-image::before {
   content: "";
   position: absolute;
   width: 100%;
@@ -26,4 +25,14 @@
     #ff5f6d
   );
   border-radius: 80%;
+  animation: rotateGradient 5s linear infinite;
+}
+
+@keyframes rotateGradient {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }

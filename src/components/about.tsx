@@ -5,9 +5,11 @@ import "../css/profile.css";
 
 function About() {
   return (
-    <Grid container spacing={2}>
+    <Grid container spacing={2} sx={{ p: 4 }}>
       <Grid item xs={12} md={6}>
-        <Typography variant="h2">Ravi Dharigond</Typography>
+        <Typography variant="h2" sx={{ color: "#fff" }}>
+          Ravi Dharigond
+        </Typography>
         <p>
           A passionate <span>fullstack developer</span> from India
         </p>
