@@ -1,18 +1,51 @@
-.profile-image {
+.image-box {
   position: relative;
-  color: #fff;
+  color: #ebd5d5;
+  width: 300px;
+  margin: 50px;
+  padding: 10px;
+  z-index: 1;
+  border-radius: 10px;
+  overflow: hidden; /* Ensures the border-radius is applied to the content */
 }
 
-.profile-image::before {
+.image-box::after {
   content: "";
   position: absolute;
-  width: 100%;
-  height: 100%;
-  translate: -50% -50%;
-  left: 50%;
+  width: calc(
+    100% + 20px
+  ); /* Adjusted to extend beyond the box, accounting for padding */
+  height: calc(
+    100% + 20px
+  ); /* Adjusted to extend beyond the box, accounting for padding */
   top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(0deg); /* Start rotation at 0deg */
   z-index: -1;
-  padding: 3px;
+  border-radius: 10px;
+  background: conic-gradient(
+    from 0deg,
+    transparent 70%,
+    #ff5f6d,
+    #ffc371,
+    #ffd700,
+    #32cd32,
+    #00fa9a,
+    #1e90ff,
+    #9370db,
+    #ff5f6d
+  );
+}
+
+.image-box::before {
+  content: "";
+  position: absolute;
+  width: calc(100% + 40px); /* Adjusted to create the blur effect */
+  height: calc(100% + 40px);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%; /* A circle with the blur effect */
   background: conic-gradient(
     from 0deg,
     #ff5f6d,
@@ -21,18 +54,19 @@
     #32cd32,
     #00fa9a,
     #1e90ff,
-    #1a083c,
+    #9370db,
     #ff5f6d
   );
-  border-radius: 80%;
-  animation: rotateGradient 5s linear infinite;
+  filter: blur(1.5rem); /* Adjust the blur intensity */
+  opacity: 0.8;
+  z-index: -2;
 }
 
 @keyframes rotateGradient {
-  0% {
-    transform: rotate(0deg);
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
   }
-  100% {
-    transform: rotate(360deg);
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
   }
 }

@@ -1,4 +1,4 @@
-import { Grid, Typography } from "@mui/material";
+import { Box, Grid, Typography } from "@mui/material";
 import React from "react";
 import profile from "../assets/profile.png";
 import "../css/profile.css";
@@ -24,13 +24,9 @@ function About() {
         </p>
       </Grid>
       <Grid item xs={12} md={6}>
-        <img
-          src={profile}
-          width="80%"
-          height="70%"
-          style={{ borderRadius: "80%" }}
-          className="profile-image"
-        />
+        <Box className="image-box">
+          <img src={profile} width="100%" height="100%" />
+        </Box>
       </Grid>
     </Grid>
   );
